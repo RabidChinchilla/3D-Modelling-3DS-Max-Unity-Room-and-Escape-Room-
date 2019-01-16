@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gold : MonoBehaviour
-{
+public class Sword : MonoBehaviour {
 
     public GameObject Player;
     public GameObject pickUp;
@@ -16,7 +15,7 @@ public class Gold : MonoBehaviour
         LevelProgression levelProgression = Player.GetComponent<LevelProgression>();
         if (Input.GetKeyDown("q"))
         {
-            levelProgression.goldCollected = true;
+            levelProgression.swordCollected = true;
             pickUp.SetActive(false);
             inspect.SetActive(false);
             clue.SetActive(false);

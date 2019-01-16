@@ -2,25 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gold : MonoBehaviour
-{
+public class Mirror : MonoBehaviour {
 
     public GameObject Player;
-    public GameObject pickUp;
-    public GameObject inspect;
     public GameObject clue;
+    public GameObject inspect;
+    public GameObject pickUp;
 
     private void OnTriggerStay(Collider other)
     {
-        pickUp.SetActive(true);
         LevelProgression levelProgression = Player.GetComponent<LevelProgression>();
+        pickUp.SetActive(true);
         if (Input.GetKeyDown("q"))
         {
-            levelProgression.goldCollected = true;
+            levelProgression.laughedAt = true;
             pickUp.SetActive(false);
             inspect.SetActive(false);
             clue.SetActive(false);
-            Destroy(gameObject);
         }
     }
 

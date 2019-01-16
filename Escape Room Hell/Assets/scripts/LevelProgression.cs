@@ -8,9 +8,7 @@ public class LevelProgression : MonoBehaviour {
     public bool cakeCollected = false;
     public bool goldCollected = false;
     public bool soulCorrupted = false;
+    public bool died = false;
+    public bool laughedAt = false;
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
