@@ -10,5 +10,7 @@ public class LevelProgression : MonoBehaviour {
     public bool soulCorrupted = false;
     public bool died = false;
     public bool laughedAt = false;
+
+    public bool keyCollected = false;
 	
 }

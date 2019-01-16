@@ -10,6 +10,10 @@ public class corruptSoul : MonoBehaviour {
     public GameObject inspect;
     public GameObject clue;
 
+    public GameObject corruptSoulPrefab;
+    public GameObject position;
+
+
     private void OnTriggerStay(Collider other)
     {
         LevelProgression levelProgression = Player.GetComponent<LevelProgression>();
@@ -23,6 +27,7 @@ public class corruptSoul : MonoBehaviour {
                 inspect.SetActive(false);
                 clue.SetActive(false);
                 corruptInstruction.SetActive(false);
+                Instantiate(corruptSoulPrefab, position.transform.position, position.transform.rotation);
                 Destroy(gameObject);
             }
         }
