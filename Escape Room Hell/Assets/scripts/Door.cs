@@ -6,7 +6,6 @@ public class Door : MonoBehaviour {
 
     public AudioSource sound;
     public GameObject Player;
-    public GameObject openDoor;
     public GameObject interact;
 
     public Animator doorAnim;
@@ -22,15 +21,19 @@ public class Door : MonoBehaviour {
         LevelProgression levelProgression = Player.GetComponent<LevelProgression>();
         if (levelProgression.keyCollected == true)
         {
-            openDoor.SetActive(true);
             interact.SetActive(true);
             if (Input.GetKeyDown("q"))
             {
-                openDoor.SetActive(false);
+                Destroy(gameObject, 10.0f);
                 interact.SetActive(false);
                 sound.Play();
                 doorAnim.enabled = true;
             }
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        interact.SetActive(false);
     }
 }
